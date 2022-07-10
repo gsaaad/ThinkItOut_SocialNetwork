@@ -19,7 +19,7 @@ const userController = {
   },
 
   //   Get user by Id
-  getPizzaById({ params }, res) {
+  getUserById({ params }, res) {
     User.findOne({ _id: params.id })
       .populate({
         path: "thoughts",
@@ -74,7 +74,7 @@ const userController = {
         );
       });
   },
-  deletePizza({ params }, res) {
+  deleteUser({ params }, res) {
     User.findOneAndDelete({ _id: params.id })
       .then((dbUserData) => {
         if (!dbUserData) {

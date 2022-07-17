@@ -1,5 +1,5 @@
 const { Schema, model } = require("mongoose");
-const isEmail = require("validator");
+// const isEmail = require("validator");
 const UserSchema = new Schema({
   username: {
     type: String,
@@ -17,7 +17,12 @@ const UserSchema = new Schema({
     require: true,
     trim: true,
     unique: true,
-    validate: [isEmail, "Invalid email input, Try again"],
+    // validate: [isEmail, "Invalid email input, Try again"],
+  },
+  password: {
+    type: String,
+    require: true,
+    trim: true,
   },
 });
 

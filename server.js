@@ -18,13 +18,10 @@ app.use(express.static("public"));
 // app.get("/", (req, res) => {
 //   res.send("Hello World!");
 // });
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost:27017/think-it-out",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
-);
+mongoose.connect("mongodb://localhost:27017/think-it-out", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 app.listen(PORT, () => {
   console.log(`Connected on port ${PORT}`);
